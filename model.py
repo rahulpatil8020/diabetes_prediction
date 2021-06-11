@@ -409,7 +409,7 @@ opt_parameters = grid_search.best_params_
 # We can then create a model with the optimum values for hyperparameters
 lgbm_clf = lgbm.LGBMClassifier(**opt_parameters)
 
-joblib.dump(lgbm_clf, 'NewLGBM.pkl')
-
 model_performance(lgbm_clf, 'LightGBM')
 scores_table(lgbm_clf, 'LightGBM')
+
+joblib.dump(lgbm_clf, 'NewLGBM.pkl')
