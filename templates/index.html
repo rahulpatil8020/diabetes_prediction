@@ -1,44 +1,70 @@
 <!DOCTYPE html>
-<html>
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <title>ML API</title>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/stylesheet/style.css') }}">
+    <meta name='viewport' content="width= device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div class="login">
-        <h1>Predict Diabetes</h1>
-
-        <!-- Main Input For Receiving Query to our ML -->
+    <div class="container">
+        <div class="title">
+            Information Form
+        </div>
         <form action="{{ url_for('predict')}}" method="post">
-            <input type="number" step="any" name="Pregnancies" placeholder="Pregnanciess" required="required" />
-            <input type="number" step="any" name="Glucose" placeholder="Glucose" required="required" />
-            <input type="number" step="any" name="BloodPressure" placeholder="BloodPressure" required="required" />
-            <input type="number" step="any" name="SkinThickness" placeholder="SkinThickness" required="required" />
-            <input type="number" step="any" name="Insulin" placeholder="Insulin" required="required" />
-            <input type="number" step="any" name="BMI" placeholder="BMI" required="required" />
-            <input type="number" step="any" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction"
-                required="required" />
-            <input type="number" step="any" name="Age" placeholder="Age" required="required" />
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Pregnancies</span>
+                    <input type="number" step="any" placeholder="Number of Pregnancies (Enter 0 if Male)"
+                        required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Glucose</span>
+                    <input type="number" step="any" placeholder="Enter Glucose Level" required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">BloodPressure</span>
+                    <input type="number" step="any" placeholder="Enter Blood Pressure" required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Skin Thickness</span>
+                    <input type="number" step="any" placeholder="Enter Skin Thickness" required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Insulin</span>
+                    <input type="number" step="any" placeholder="Enter Insulin Level" required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">BMI</span>
+                    <input type="number" step="any" placeholder="Enter BMI" required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Diabetes Pedigree Function</span>
+                    <input type="number" step="any" placeholder="Enter Diabetes Pedigree Function"
+                        required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Age</span>
+                    <input type="number" step="any" placeholder="Enter Your Age" required="required" />
+                </div>
 
-
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                <div class="button">
+                    <input type="submit" value="SUBMIT" />
+                </div>
+            </div>
         </form>
-
-        <br>
-        <br>
-        {{ prediction_text }}
-
+        <h1>
+            {{prediction_text}}
+        </h1>
     </div>
-
-
 </body>
+
 
 </html>
