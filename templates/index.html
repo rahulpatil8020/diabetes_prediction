@@ -18,48 +18,56 @@
         <div class="title">
             Information Form
         </div>
+
         <form action="{{ url_for('predict')}}" method="post">
             <div class="user-details">
+
                 <div class="input-box">
                     <span class="details">Pregnancies</span>
-                    <input type="number" step="any" placeholder="Number of Pregnancies (Enter 0 if Male)"
-                        required="required" />
+                    <input type="number" step="any" name="Pregnancies"
+                        placeholder="Number of Pregnancies (Enter 0 if Male)" required="required" />
                 </div>
                 <div class="input-box">
                     <span class="details">Glucose</span>
-                    <input type="number" step="any" placeholder="Enter Glucose Level" required="required" />
-                </div>
-                <div class="input-box">
-                    <span class="details">BloodPressure</span>
-                    <input type="number" step="any" placeholder="Enter Blood Pressure" required="required" />
-                </div>
-                <div class="input-box">
-                    <span class="details">Skin Thickness</span>
-                    <input type="number" step="any" placeholder="Enter Skin Thickness" required="required" />
-                </div>
-                <div class="input-box">
-                    <span class="details">Insulin</span>
-                    <input type="number" step="any" placeholder="Enter Insulin Level" required="required" />
-                </div>
-                <div class="input-box">
-                    <span class="details">BMI</span>
-                    <input type="number" step="any" placeholder="Enter BMI" required="required" />
-                </div>
-                <div class="input-box">
-                    <span class="details">Diabetes Pedigree Function</span>
-                    <input type="number" step="any" placeholder="Enter Diabetes Pedigree Function"
+                    <input type="number" step="any" name="Glucose" placeholder="Enter Glucose Level"
                         required="required" />
                 </div>
                 <div class="input-box">
-                    <span class="details">Age</span>
-                    <input type="number" step="any" placeholder="Enter Your Age" required="required" />
+                    <span class="details">BloodPressure</span>
+                    <input type="number" step="any" name="BloodPressure" placeholder="Enter Blood Pressure"
+                        required="required" />
                 </div>
-
+                <div class="input-box">
+                    <span class="details">Skin Thickness</span>
+                    <input type="number" step="any" name="SkinThickness" placeholder="Enter Skin Thickness"
+                        required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Insulin</span>
+                    <input type="number" step="any" name="Insulin" placeholder="Enter Insulin Level"
+                        required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">BMI</span>
+                    <input type="number" step="any" name="BMI" placeholder="Enter BMI" required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Diabetes Pedigree Function</span>
+                    <input type="number" step="any" name="DiabetesPedigreeFunction"
+                        placeholder="Enter Diabetes Pedigree Function" required="required" />
+                </div>
+                <div class="input-box">
+                    <span class="details">Age</span>
+                    <input type="number" step="any" name="Age" placeholder="Enter Your Age" required="required" />
+                </div>
                 <div class="button">
                     <input type="submit" value="SUBMIT" />
                 </div>
+
             </div>
         </form>
+
+
         <h1>
             {{prediction_text}}
         </h1>
